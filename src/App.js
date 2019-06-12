@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        Welcome to NYC parking violation please enter a lic plate # 
+        Welcome to NYC parking violation  please enter your information
         <PlateInput />
       
       
