@@ -10,8 +10,9 @@ function App() {
         Welcome to NYC parking violation  please enter your information
         <PlateInput />
       
-      
       </header>
+    
+
     </div>
   );
 }
