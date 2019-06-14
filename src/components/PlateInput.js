@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
+import { search} from '../actions/plate.js'
 class PlateInput extends Component {
   state = {
     number: "",
@@ -8,8 +9,8 @@ class PlateInput extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state, "submitted")
-    //this.props.(this.state)
+   
+    this.props.search(this.state)
     this.setState({
       number: "",
       state: "" })
@@ -22,7 +23,7 @@ class PlateInput extends Component {
       [event.target.name]: event.target.value
    
     })
-    console.log(this.state)
+   
 
   }
 
@@ -41,4 +42,4 @@ class PlateInput extends Component {
     )
   }
 }
-export default PlateInput 
+export default connect(null, { search})(PlateInput) 
