@@ -28,8 +28,9 @@ export const logout = () =>{
         credentials: "include"
         
      
-      })
-
+    }).then(r => r.json())
+    .then(data => console.log(data))
+//response for logged out from server 
   }
 }
 export const login = credentials => {

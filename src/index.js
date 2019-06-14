@@ -8,15 +8,17 @@ import { Provider } from 'react-redux'
 import thunk  from 'redux-thunk'
 import users from './reducers/users'
 import currentUser from './reducers/currentUser'
+import violations from './reducers/violations'
 import loginForm from './reducers/loginform'
 import signupform from './reducers/signupform'
-//add a reducer  this is just stupped for now 
+
 
 const reducer = combineReducers({
     users,
     currentUser,
   loginForm,
-  signupform 
+  signupform, 
+  violations
   }
 ) 
 //add a reducer  and 
