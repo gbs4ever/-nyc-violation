@@ -2,13 +2,15 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import PlateInput from './components/PlateInput'
-import Logout from './components/Logout'
-import LoginForm from './components/LoginForm'
+import ViolationContainer from './container/ViolationContainer.js'
+import NavBar from './components/NavBar.js'
+// import Logout from './components/Logout'
+// import LoginForm from './components/LoginForm'
 import SignUp from './components/SignUp'
 import  {connect} from 'react-redux'
 import {getCurrentUser } from './actions/currentUser.js'
 class App extends React.Component {
-
+    // <ViolationContainer />
   componentDidMount() {
   
    this.props.getCurrentUser()
@@ -21,20 +23,17 @@ class App extends React.Component {
         <img src={logo} className="App-logo" alt="logo" />
         Welcome to NYC parking violation  please enter your information
         <PlateInput />
-        {!this.props.state.currentUser ? <LoginForm /> : <Logout />}
-        <SignUp />
-        
+        <NavBar />
+        <SignUp/>
+        <ViolationContainer />
       </header>
     
+      
 
     </div>
   );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    state
-  }
-}
 
-export default connect(mapStateToProps,{getCurrentUser})(App)
+
+export default connect(null,{getCurrentUser})(App)
