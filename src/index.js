@@ -7,14 +7,21 @@ import { createStore, applyMiddleware,compose, combineReducers} from 'redux'
 import { Provider } from 'react-redux'
 import thunk  from 'redux-thunk'
 import users from './reducers/users'
+import currentUser from './reducers/currentUser'
+import loginForm from './reducers/loginform'
+import signupform from './reducers/signupform'
 //add a reducer  this is just stupped for now 
 
 const reducer = combineReducers({
-    users
+    users,
+    currentUser,
+  loginForm,
+  signupform 
   }
 ) 
 //add a reducer  and 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose ;
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose ;
+
 const store = createStore(reducer,composeEnhancer(applyMiddleware(thunk)))
 
 
@@ -28,7 +35,7 @@ ReactDOM.render(
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
