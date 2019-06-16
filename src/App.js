@@ -11,16 +11,18 @@ import  {connect} from 'react-redux'
 import {getCurrentUser } from './actions/currentUser.js'
 class App extends React.Component {
     // <ViolationContainer />
+  
   componentDidMount() {
   
    this.props.getCurrentUser()
 }
   render(){
-  
+    const pic = "https://www.yalefox.com/wp-content/uploads/2018/09/nyc-logo.png"
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+   
+        <img src={pic} className="App-logo" alt="logo" />
         Welcome to NYC parking violation  please enter your information
         <PlateInput />
         <NavBar />
