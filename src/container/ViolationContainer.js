@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import ViolationCard from '../components/ViolationCard';
 class ViolationContainer extends Component {
 //we will add notice here just add to state with key 
-
-  render() {
   
+  render() {
+    const merged = [].concat.apply([], this.props.violations);
     return (
       <div>
-        <ViolationCard violations={this.props.violations}/>
+        <ViolationCard violations={merged}/>
       
       </div>
     )

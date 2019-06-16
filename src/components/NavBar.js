@@ -10,8 +10,9 @@ const Navbar = ({ currentUser }) => {
   return (
     <div>
       Welcome 
-      {!currentUser ? <LoginForm /> : <Logout />}
-   
+      <ul>
+     <li> {!currentUser ? <LoginForm /> : <Logout />}</li>
+      </ul>
     </div>
   )
 }
