@@ -23,7 +23,8 @@ class App extends React.Component {
    
         <img src={pic} className="App-logo" alt="logo" />
         Welcome to NYC parking violation  please enter your information
-        <PlateInput />
+        {this.props.currentUser ? <PlateInput /> : "Please login in to search "}
+     
         <NavBar />
         <SignUp/>
         <ViolationContainer />
@@ -35,6 +36,12 @@ class App extends React.Component {
   );
   }
 }
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  }
+}
 
 
-export default connect(null, { getCurrentUser })(App)
+
+export default connect(mapStateToProps, { getCurrentUser })(App)
