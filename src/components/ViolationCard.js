@@ -12,7 +12,9 @@ const ViolationCard = ({violations}) => {
         <td key={index}> $ {tickets.fine_amount} </td>
         <td key={index+1}>$ {tickets.payment_amount}</td>
         <td key={index+2}> {tickets.summons_number}</td>
-        <td key={index+3}> <a href ={tickets.summons_image.url}> more info </a></td>
+      <td key={index + 3}> {tickets.violation}</td>
+      <td key={index + 4}> {tickets.violation_status}</td>
+      <td key={index + 5}> <a href={tickets.summons_image.url}>View Summons</a></td>
         </tr>
         </tbody>
     })
@@ -25,8 +27,10 @@ const ViolationCard = ({violations}) => {
         <tbody>
         <tr>
           <th> Fine Amount    </th>
-          <th>    Payment Amount  </th>
-          <th>  Summons Number      </th>
+          <th>  Payment Amount</th>
+          <th>  Summons Number   </th>
+            <th>Violation</th>
+            <th>Violation Status</th>
           <th>To see tickets click here  </th>
         </tr>
         </tbody>
@@ -60,7 +64,7 @@ export default ViolationCard ;
 // precinct: "010"
 // reduction_amount: "115"
 // state: "NY"
-// summons_image: { url: "http://nycserv.nyc.gov/NYCServWeb/ShowImage?search…dOM1RVRTlQUT09&locationName=_____________________", description: "View Summons" }
+// summons_image: { url: "http://nycserv.nyc.gov/NYCServWeb/ShowImage?search…dOM1RVRTlQUT09&locationName=_____________________", description: "" }
 // summons_number: "1459305700"
 // violation: "NO STANDING-DAY/TIME LIMITS"
 // violation_status: "HEARING HELD-NOT GUILTY"

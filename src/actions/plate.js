@@ -29,13 +29,14 @@ export const search = data => {
     }
     ).then(r => r.json())
       .then(data => {
-        if (data.error) {
-          alert (data.error)
+        if (data.notice) {
+
+          alert (data.notice)
         }
         else {
 //dispatch   
           dispatch(violationresponse(data))
-console.log(data)
+
         }
  
       }

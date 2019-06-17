@@ -1,19 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import PlateInput from './components/PlateInput'
 import ViolationContainer from './container/ViolationContainer.js'
 import NavBar from './components/NavBar.js'
-// import Logout from './components/Logout'
-// import LoginForm from './components/LoginForm'
 import SignUp from './components/SignUp'
 import  {connect} from 'react-redux'
 import {getCurrentUser } from './actions/currentUser.js'
+// import { getplates} from './actions/currentUser.js'
 class App extends React.Component {
     // <ViolationContainer />
   
   componentDidMount() {
-  
+    // this.props.getplates()
    this.props.getCurrentUser()
 }
   render(){
@@ -38,4 +37,4 @@ class App extends React.Component {
 }
 
 
-export default connect(null,{getCurrentUser})(App)
+export default connect(null, { getCurrentUser })(App)
