@@ -6,23 +6,23 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware,compose, combineReducers} from 'redux'
 import { Provider } from 'react-redux'
 import thunk  from 'redux-thunk'
-import users from './reducers/users'
+
 import currentUser from './reducers/currentUser'
 import violations from './reducers/violations'
 import loginForm from './reducers/loginform'
-import signupform from './reducers/signupform'
+
 
 
 
 const reducer = combineReducers({
-    users,
+   
     currentUser,
   loginForm,
-  signupform, 
+ 
   violations
   }
 ) 
-//add a reducer  and 
+
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose ;
 
 const store = createStore(reducer,composeEnhancer(applyMiddleware(thunk)))
