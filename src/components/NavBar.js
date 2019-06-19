@@ -19,15 +19,14 @@ function Navbar({ currentUser}) {
      
           {!currentUser ? <Link to="/login">Login</Link> : /*<Link to="/logout">Log Out</Link> */ <Logout /> }
           </li>
+       
           <li>
-            <Link to="/signup">Sign Up</Link>
-          </li>
-          <li>
-            <Link to="/search">Search </Link>
+          {currentUser ? <Link to="/search">Search </Link> : <Link to="/signup">Sign Up</Link>}
           </li>
          <li>
-          <Link to="/plates">Past Searches</Link>
-        </li> : ""}
+          {currentUser ? <Link to="/plates">Past Searches</Link> : ""}
+        
+        </li> 
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://secure24.ipayment.com/NYCPayments/nycbookmark_1.htm">Pay Your Tickets</a>
           </li>
