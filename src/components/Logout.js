@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 import { logout } from '../actions/currentUser.js'
-
-
 const Logout = ({history, logout }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,12 +10,13 @@ const Logout = ({history, logout }) => {
   };
    
     return (
-      <div className="LogoutButton">
-        <form onSubmit={handleSubmit}>
-          
-        <input  type = "submit" value = "Log Out" />
-        </form>
-      </div>
+     <div className="LogoutButton">
+      {/* //  <form onSubmit={handleSubmit}> */}
+        
+      <a href="#" rel="noopener noreferrer"  onClick={handleSubmit}>Logout</a> 
+    {/* //  <input  type = "submit" value = "Log Out" />
+      //  </form> */}
+     </div>
     )
   }
 

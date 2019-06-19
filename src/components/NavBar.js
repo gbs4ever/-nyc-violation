@@ -1,8 +1,11 @@
 import React from "react";
 import { connect } from 'react-redux'
 import {  Link } from "react-router-dom";
-
-
+import  Logout from './Logout'
+// function logoutHandler (event){
+//   event.preventDefault();
+//   Logout()
+// }
 
 function Navbar({ currentUser}) {
   return (
@@ -13,7 +16,8 @@ function Navbar({ currentUser}) {
             <Link to="/">Home</Link>
           </li>
           <li>
-          {!currentUser ? <Link to="/login">Login</Link> : <Link to="/logout">Log Out</Link> }
+     
+          {!currentUser ? <Link to="/login">Login</Link> : /*<Link to="/logout">Log Out</Link> */ <Logout /> }
           </li>
           <li>
             <Link to="/signup">Sign Up</Link>
@@ -21,9 +25,9 @@ function Navbar({ currentUser}) {
           <li>
             <Link to="/search">Search </Link>
           </li>
-        <li>
+         <li>
           <Link to="/plates">Past Searches</Link>
-        </li>
+        </li> : ""}
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://secure24.ipayment.com/NYCPayments/nycbookmark_1.htm">Pay Your Tickets</a>
           </li>
