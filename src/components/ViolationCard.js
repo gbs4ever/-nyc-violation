@@ -7,14 +7,15 @@ const ViolationCard = ({violations}) => {
  
     const output = violations.map((tickets, index) => {
 
-  return  <tbody>
+  return  <tbody key ={index+5}>
         <tr>
         <td key={index}> $ {tickets.fine_amount} </td>
         <td key={index+1}>$ {tickets.payment_amount}</td>
         <td key={index+2}> {tickets.summons_number}</td>
-      <td key={index + 3}> {tickets.violation}</td>
-      <td key={index + 4}> {tickets.violation_status}</td>
-      <td key={index + 5}> <a href={tickets.summons_image.url}>View Summons</a></td>
+      <td key={index+3}> {tickets.violation}</td>
+      <td key={index+4}> {tickets.violation_status}</td>
+      <td key={index+5}> <a target="_blank" rel="noopener noreferrer"href={tickets.summons_image.url}>View Summons</a></td>
+     
         </tr>
         </tbody>
     })
@@ -22,7 +23,7 @@ const ViolationCard = ({violations}) => {
   
   return (
     <div>
-      <button ><a href="https://secure24.ipayment.com/NYCPayments/nycbookmark_1.htm">pay your tickets </a> </button> 
+      
       <table>
         <tbody>
         <tr>

@@ -1,38 +1,53 @@
 import React from 'react';
-//import logo from './logo.svg';
 import './App.css';
-import PlateInput from './components/PlateInput'
-import ViolationContainer from './container/ViolationContainer.js'
-import NavBar from './components/NavBar.js'
-import SignUp from './components/SignUp'
-import  {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import Navbar from './components/Navbar'
 import {getCurrentUser } from './actions/currentUser.js'
-// import { getplates} from './actions/currentUser.js'
+import LoginForm from './components/LoginForm'
+import SignUp from './components/SignUp'
+import Home from './components/Home'
+import ViolationContainer from './container/ViolationContainer.js'
+import PlatesContainer from './container/PlatesContainer.js'
+import PlateInput from './components/PlateInput'
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import Logout from './components/Logout'
+
 class App extends React.Component {
     // <ViolationContainer />
   
   componentDidMount() {
-    // this.props.getplates()
+    
    this.props.getCurrentUser()
 }
   render(){
     const pic = "https://www.yalefox.com/wp-content/uploads/2018/09/nyc-logo.png"
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-   
+      
+      <Navbar />
+      <div className="App-header">
+        Welcome to NYC parking violation
         <img src={pic} className="App-logo" alt="logo" />
-        Welcome to NYC parking violation  please enter your information
-        {this.props.currentUser ? <PlateInput /> : "Please login in to search "}
-     
-        <NavBar />
-        <SignUp/>
-        <ViolationContainer />
-      </header>
+        </div>
+        <Route path="/" component={Home} />
+        <Route exact path="/signup" render={() => <SignUp />} />
+        <Route exact path="/logout" render={() => <Logout/> }        />
+        <Route exact path="/login" render={() => <LoginForm />} />
+        <Route exact path="/violations" render={() => <ViolationContainer />} />
+        <Route exact path="/plates" render={() => <PlatesContainer />} />
+        <Route exact path="/search" component={PlateInput} />
     
       
+     
+    
+         
+         </div>
+    </Router>
+  
 
-    </div>
+  
+
   );
   }
 }

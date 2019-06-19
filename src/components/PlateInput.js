@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { search} from '../actions/plate.js'
+import { withRouter} from "react-router-dom";
+import PlatesContainer from '../container/PlatesContainer.js'
 function validate(number, state) {
   // true means invalid, so our conditions got reversed
   return {
@@ -17,8 +19,19 @@ class PlateInput extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-   
+  
     this.props.search(this.state)
+      .then(data => {
+        if(data.error){
+          alert(data.error)
+        } else if(data.notice) {
+          alert(data.notice)
+        } else {
+         this.props.history.push('/violations')
+        }
+      })
+      
+
     this.setState({
       number: "",
       state: "" })
@@ -37,11 +50,16 @@ class PlateInput extends Component {
 
 
   render() {
+   
   const errors = validate(this.state.number, this.state.state);
   const isDisabled = Object.keys(errors).some(x => errors[x]);
     //const isEnabled = this.state.number.length > 0 && this.state.state.length > 1;
     return (
-      <div>
+   
+      <div className ="col-centered">
+     
+        <fieldset className= "search">
+        Please enter your information
         <form onSubmit={this.onSubmit}>
           <label >Plate #  </label>
           <input
@@ -52,8 +70,17 @@ class PlateInput extends Component {
           onChange={this.onChange} type="text" name="state" value={this.state.state} /> <br />
           <button disabled={isDisabled}>Search </button>
         </form>
+        </fieldset>
+        <div className = "plates">
+          <PlatesContainer />
+
+        </div>
       </div>
+   
+        
+      
     )
   }
 }
-export default connect(null, { search})(PlateInput) 
+
+export default withRouter(connect(null, { search})(PlateInput)) 

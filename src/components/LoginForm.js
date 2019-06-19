@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { updateLoginForm } from '../actions/updateloginform'
 import { login } from '../actions/currentUser.js'
-
+import { withRouter } from 'react-router-dom';
 class LoginForm extends Component {
   state = {
     email: "",
@@ -11,9 +11,15 @@ class LoginForm extends Component {
 //login is the fetch to the backend
   onSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state, "submitted")
     this.props.updateLoginForm(this.state)
     this.props.login(this.state)
+    .then(data => {
+        if (data.error) {
+          alert(data.error)
+         } else {
+          this.props.history.push('/search')
+        }
+      })
     this.setState({
       email: "",
       password: ""
@@ -27,7 +33,7 @@ class LoginForm extends Component {
       [event.target.name]: event.target.value
 
     })
-    console.log(this.state)
+
 
   }
 
@@ -35,10 +41,11 @@ class LoginForm extends Component {
 
     return (
       <div>
+    
         <form onSubmit={this.onSubmit}>
-          <label >email  </label>
+          <label > Email:  </label>
           <input onChange={this.onChange} type="text" name="email" value={this.state.email} /> <br />
-          <label > password</label>
+          <label > Password: </label>
           <input onChange={this.onChange} type=" password" name="password" value={this.state.password} /> <br />
           <input type='submit' />
         </form>
@@ -46,13 +53,7 @@ class LoginForm extends Component {
     )
   }
 }
-  //this is to read the redux state probally wont neeed , then change first argument to null
-// const mapStateToProps = state => {
-//   return { 
-//     username: state.LoginForm.username,
-//     password: state.LoginForm.password
-//    }
-// }
 
 
-export default connect(null, { updateLoginForm,login })(LoginForm )
+
+export default withRouter(connect(null, { updateLoginForm,login })(LoginForm ))

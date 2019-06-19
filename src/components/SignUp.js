@@ -36,10 +36,11 @@ class SignUp extends Component {
 
     return (
       <div>
+        Please Sign Up  
         <form onSubmit={this.onSubmit}>
-          <label >email  </label>
+          <label >Email:  </label>
           <input onChange={this.onChange} type="text" name="email" value={this.state.email} /> <br />
-          <label > password</label>
+          <label > Password: </label>
           <input onChange={this.onChange} type=" password" name="password" value={this.state.password} /> <br />
           <input type='submit' />
         </form>
@@ -47,13 +48,7 @@ class SignUp extends Component {
     )
   }
 }
-//this is to read the redux state probally wont neeed , then change first argument to null
-// const mapStateToProps = state => {
-//   return { 
-//     username: state.LoginForm.username,
-//     password: state.LoginForm.password
-//    }
-// }
+
 
 
 export default connect(null, { signup, updateLoginForm })(SignUp)

@@ -49,12 +49,10 @@ export const login = credentials => {
     }
     ).then(r => r.json())
    .then(user =>{
-      if(user.error){
-        alert(user.error)
+      if(!user.error){
+       dispatch(setCurrentUser(user))
       }
-      else{
-        dispatch(setCurrentUser(user)) 
-      }
+      return user
      }
     )
     }
@@ -109,28 +107,3 @@ export const signup = credentials => {
       )
   }
 }
-// export const getplates = () => {
-  
-//   return dispatch => {
-    
-//     return fetch("http://localhost:3001/plates", {
-
-//       method: "GET",
-//       credentials: "include",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-    
-//     }
-//     ).then(r => r.json())
-//       .then(data => {
-//         if (data.error) {
-//           alert(data.error)
-//         }
-//         else {
-//           console.log(data)
-//         }
-//       }
-//       )
-//   }
-// }
