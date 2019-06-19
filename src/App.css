@@ -1,22 +1,73 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+   min-height: 100vh;
+   /* background-image: url("https://media.timeout.com/images/101749629/750/422/image.jpg"); */
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 9vmin;
+  height: 6vmin;
   pointer-events: none;
+   padding-bottom: 60px;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  border-color: inherit;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.NavBar {
+  /* position: fixed; */
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  margin: 2px;
+  padding: 1px;
+  width: 100%;
+  overflow: hidden;
+}
+.NavBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: rgb(73, 73, 73); */
+}
+.search{
+    color: #61dafb;
+    display:inline-block;
+    padding: 30px;
+}
+.plates{
+  padding: 20px;
+  color: #61dafb;
+   display: block;
+    /* margin: 35px; */
+   width: 50%;
+ margin: 0 auto;
+}
+.NavBar li {
+  float: left;
+}
+
+.NavBar li a {
+  display: block;
+  color: #61dafb;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: rgb(146, 247, 146);
 }
 
 .App-link {
@@ -61,6 +112,38 @@ li {
   text-decoration: none;}
   .error {
   border: 1px solid red;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.LogoutButton {
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+}
+.uneven-end {
+  float: center;
+  width: 24%;
+  margin: auto;
+  font-size: 14px;
+  color: #61dafb;
+  background-color: #21252b;
+  text-align: center;
+  border-width: 1px;
+  border-radius: 2px;
+}
+/* .col3 {
+  /* column-count: 3; */
+  /* column-rule: 1px solid grey; */
+  /* column-fill: auto; */
+  /* text-align: center; }*/
+
+.column {
+  margin: auto;
+  font-size: 20px;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
