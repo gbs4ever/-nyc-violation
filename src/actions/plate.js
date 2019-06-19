@@ -9,6 +9,14 @@ export const violationresponse = tickets=> {
   }
 
 }
+export const plateupdate= plates => {
+
+  return {
+    type: "ADD_PLATES",
+    plates
+  }
+
+}
 
 
 
@@ -16,11 +24,10 @@ export const violationresponse = tickets=> {
 
 
 export const search = data => {
-  console.log(data, "we have hit the data ")
   return dispatch => {
-    debugger
+
     return fetch("http://localhost:3001/violations", {
-        method: "POST",
+      method: "POST",
       credentials: "include",
       headers: {
         "Content-Type": "application/json"
@@ -29,14 +36,13 @@ export const search = data => {
     } 
     ).then(r => r.json())
 
-      .then(data => {
-        debugger
-        console.log(data, "1")
-        if (!data.notice  && !data.error ) {
-          console.log(data, "2")
-          dispatch(violationresponse(data))
+      .then(d => {
+     
+        if (!d.notice  && !d.error ) {
+          dispatch(plateupdate(data))
+          dispatch(violationresponse(d))
         }
-        return data
+        return d
       }
       )
   }

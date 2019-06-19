@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PlateCard from '../components/PlateCard';
-import { search } from '../actions/plate.js'
+// import { search } from '../actions/plate.js'
 class PlatesContainer extends Component {
   
   render() {
  
     return (
       <div>
-        {this.props.currentUser ? <PlateCard plates={this.props.currentUser.plates} search={search}/> : ""}
+        {this.props.currentUser ? <PlateCard plates={this.props.currentUser.plates} /> : ""}
 
       </div>
     )
   }
 }
+
 const mapStateToProps = ({ currentUser }) => {
   return {
     currentUser

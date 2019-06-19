@@ -1,5 +1,5 @@
 export default (state = null, action) => {
-
+  let duplicate
   switch (action.type) {
     case "SET_CURRENT_USER":
     
@@ -7,8 +7,15 @@ export default (state = null, action) => {
     case "CLEAR_CURRNET_USER":
      
      return null
-   
-
+    case "ADD_PLATES":
+      debugger
+      duplicate = state.plates.filter(p => p.number === action.plates.number )
+      if (duplicate.length === 0) {
+     return  {...state , plates: [...state.plates,action.plates] }
+      } else {
+        return state
+      }
+    
 
     default:
       return state

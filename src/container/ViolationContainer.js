@@ -5,6 +5,8 @@ class ViolationContainer extends Component {
 //we will add notice here just add to state with key 
   
   render() {
+
+
     const merged = [].concat.apply([], this.props.violations);
     return (
       <div>

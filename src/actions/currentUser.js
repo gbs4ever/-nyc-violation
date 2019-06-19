@@ -97,12 +97,10 @@ export const signup = credentials => {
     }
     ).then(r => r.json())
       .then(user => {
-        if (user.error) {
-          alert(user.error)
-        }
-        else {
+        if (!user.error) {
           dispatch(setCurrentUser(user))
         }
+        return user
       }
       )
   }

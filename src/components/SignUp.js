@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 //import { signupform} from '../actions/signupform'
 import { updateLoginForm } from '../actions/updateloginform'
 import { signup} from '../actions/currentUser.js'
+import { withRouter } from 'react-router-dom';
 
 class SignUp extends Component {
   state = {
@@ -14,6 +15,13 @@ class SignUp extends Component {
     event.preventDefault()
     console.log(this.state, "submittedsign")
     this.props.signup(this.state)
+      .then(data => {
+        if (data.error) {
+          alert(data.error)
+        } else {
+          this.props.history.push('/search')
+        }
+      })
     this.props.updateLoginForm(this.state)
     this.setState({
       email: "",
@@ -51,4 +59,4 @@ class SignUp extends Component {
 
 
 
-export default connect(null, { signup, updateLoginForm })(SignUp)
+export default withRouter(connect(null, { signup, updateLoginForm })(SignUp))
