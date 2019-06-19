@@ -8,7 +8,7 @@ export default (state = null, action) => {
      
      return null
     case "ADD_PLATES":
-      debugger
+   
       duplicate = state.plates.filter(p => p.number === action.plates.number )
       if (duplicate.length === 0) {
      return  {...state , plates: [...state.plates,action.plates] }

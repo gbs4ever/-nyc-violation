@@ -2,10 +2,7 @@ import React from "react";
 import { connect } from 'react-redux'
 import {  Link } from "react-router-dom";
 import  Logout from './Logout'
-// function logoutHandler (event){
-//   event.preventDefault();
-//   Logout()
-// }
+
 
 function Navbar({ currentUser}) {
   return (
@@ -31,8 +28,6 @@ function Navbar({ currentUser}) {
             <a target="_blank" rel="noopener noreferrer" href="https://secure24.ipayment.com/NYCPayments/nycbookmark_1.htm">Pay Your Tickets</a>
           </li>
         </ul>
-
-        {/* <hr /> */}
         
   
       </div>
