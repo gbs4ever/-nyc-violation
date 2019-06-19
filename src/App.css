@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #3e4146;
    min-height: 100vh;
    /* background-image: url("https://media.timeout.com/images/101749629/750/422/image.jpg"); */
 }
@@ -13,7 +13,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #3e4146;
   border-color: inherit;
  
   display: flex;
@@ -45,7 +45,7 @@
 .search{
     color: #61dafb;
     display:inline-block;
-    padding: 30px;
+    padding:  30px;
 }
 .plates{
   padding: 20px;
@@ -74,19 +74,25 @@ li a:hover {
   color: #61dafb;
 }
 table, td {
+  
   border: 1px solid black;
    border-collapse: collapse;
 }
 th, td {
+  text-align: center;
   padding: 15px;
+   
 }
-table {
-  border-spacing: 3px;
-  
-}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    border-spacing: 3px;
+    color: #56d5f8e8;
+  }
+
 tbody {
   display: table-row-group;
-  vertical-align: middle;
+  vertical-align: center;
   border-color: inherit;
 }
 td a:hover {
