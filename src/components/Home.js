@@ -5,20 +5,23 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 class Home extends React.Component {
-
+//  { this.props.currentUser }
   render() {
- // add pics and some text to this page  hi to the user you are logged in 
-    
+
+    const pic = "https://www.yalefox.com/wp-content/uploads/2018/09/nyc-logo.png"
     return(
-    <div className="row">
-      
+ 
+        <div className="App-header">
+          Welcome to NYC Parking Violation   
+        <img src={pic} className="App-logo" alt="logo" />
+        </div>
   
      
 
        
 
 
-      </div>
+     
     );
   }
 }

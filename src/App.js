@@ -21,16 +21,13 @@ class App extends React.Component {
    this.props.getCurrentUser()
 }
   render(){
-    const pic = "https://www.yalefox.com/wp-content/uploads/2018/09/nyc-logo.png"
+    
   return (
     <Router>
     <div className="App">
       
       <Navbar />
-      <div className="App-header">
-        Welcome to NYC parking violation
-        <img src={pic} className="App-logo" alt="logo" />
-        </div>
+     
         <Route path="/" component={Home} />
        
         <Route exact path="/signup" render={() => (!this.props.currentUser ? <SignUp/> : <Redirect to="/search" />)} />
