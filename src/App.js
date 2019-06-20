@@ -6,12 +6,15 @@ import {getCurrentUser} from './actions/currentUser.js'
 import LoginForm from './components/LoginForm'
 import SignUp from './components/SignUp'
 import Home from './components/Home'
+import BuildingInput  from './components/BuildingInput'
 import ViolationContainer from './container/ViolationContainer.js'
+import BuildingsContainer from './container/BuildingsContainer.js'
 import PlatesContainer from './container/PlatesContainer.js'
 import PlateInput from './components/PlateInput'
 import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 
 import Logout from './components/Logout'
+
 
 class App extends React.Component {
     // <ViolationContainer />
@@ -29,7 +32,8 @@ class App extends React.Component {
       <Navbar />
      
         <Route path="/" component={Home} />
-       
+        <Route exact path="/buildings" component={BuildingInput} />
+        <Route exact path="/buildings/index" component={BuildingsContainer} />
         <Route exact path="/signup" render={() => (!this.props.currentUser ? <SignUp/> : <Redirect to="/search" />)} />
         <Route exact path="/logout" render={() => <Logout/> }        />
         <Route exact path="/login" render={() => ( !this.props.currentUser ? <LoginForm /> : <Redirect to="/search" /> )} />
@@ -37,7 +41,7 @@ class App extends React.Component {
         <Route exact path="/plates" render={() => <PlatesContainer />} />
         <Route exact path="/search" component={PlateInput} />
     
-      
+    
      
     
          

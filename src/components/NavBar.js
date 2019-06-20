@@ -27,6 +27,9 @@ function Navbar({ currentUser}) {
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://secure24.ipayment.com/NYCPayments/nycbookmark_1.htm">Pay Your Tickets</a>
           </li>
+          <li>
+        {!currentUser ? <Link to="/login">Login</Link> : <Link to="/buildings">Beta Testing</Link>}
+        </li>
         </ul>
         
   

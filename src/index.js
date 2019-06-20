@@ -10,6 +10,7 @@ import thunk  from 'redux-thunk'
 import currentUser from './reducers/currentUser'
 import violations from './reducers/violations'
 import loginForm from './reducers/loginform'
+import buildings from './reducers/buildings'
 
 
 
@@ -18,7 +19,7 @@ const reducer = combineReducers({
    
     currentUser,
   loginForm,
- 
+  buildings ,
   violations
   }
 ) 

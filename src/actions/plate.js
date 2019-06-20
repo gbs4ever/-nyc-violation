@@ -25,7 +25,7 @@ export const plateupdate= plates => {
 
 export const search = data => {
   return dispatch => {
-
+debugger 
     return fetch("http://localhost:3001/violations", {
       method: "POST",
       credentials: "include",

@@ -12,7 +12,7 @@ class Home extends React.Component {
     return(
  
         <div className="App-header">
-          Welcome to NYC Parking Violation   
+          Welcome to NYC Violations 
         <img src={pic} className="App-logo" alt="logo" />
         </div>
   
