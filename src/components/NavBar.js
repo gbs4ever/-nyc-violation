@@ -21,7 +21,7 @@ function Navbar({ currentUser}) {
           {currentUser ? <Link to="/search">Search </Link> : <Link to="/signup">Sign Up</Link>}
           </li>
          <li>
-          {currentUser ? <Link to="/plates">Past Searches</Link> : ""}
+          {currentUser ? <Link to="/plates">Past Searches</Link> : <a target="_blank" rel="noopener noreferrer" href="https://www1.nyc.gov/nyc-resources/service/2195/pay-a-parking-ticket">NYC Tickets</a>}
         
         </li> 
           <li>
