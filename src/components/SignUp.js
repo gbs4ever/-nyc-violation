@@ -44,12 +44,13 @@ class SignUp extends Component {
 
     return (
       <div>
-        Please Sign Up  
-        <form onSubmit={this.onSubmit}>
+     
+        <form className="search" onSubmit={this.onSubmit}>
+          <p> Please Sign Up </p> 
           <label >Email:  </label>
           <input onChange={this.onChange} type="text" name="email" value={this.state.email} /> <br />
           <label > Password: </label>
-          <input onChange={this.onChange} type=" password" name="password" value={this.state.password} /> <br />
+          <input onChange={this.onChange} type="password" name="password" value={this.state.password} /> <br />
           <input type='submit' />
         </form>
       </div>

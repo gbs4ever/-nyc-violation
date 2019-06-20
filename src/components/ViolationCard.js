@@ -24,7 +24,7 @@ const ViolationCard = ({violations}) => {
   return (
     <div>
       
-      <table>
+      <table className="center">
         <tbody>
         <tr>
           <th> Fine Amount    </th>
