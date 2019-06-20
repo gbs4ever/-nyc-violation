@@ -36,7 +36,7 @@ export const logout = () =>{
   }
 }
 export const login = credentials => {
-  console.log(credentials,"logins")
+  
   return dispatch =>{
     return fetch("http://localhost:3001/sessions",{
      

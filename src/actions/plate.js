@@ -37,9 +37,9 @@ export const search = data => {
     ).then(r => r.json())
 
       .then(d => {
-     
+        dispatch(plateupdate(data))
         if (!d.notice  && !d.error ) {
-          dispatch(plateupdate(data))
+      
           dispatch(violationresponse(d))
         }
         return d
