@@ -12,10 +12,7 @@ function Navbar({ currentUser}) {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-     
-          {!currentUser ? <Link to="/login">Login</Link> : /*<Link to="/logout">Log Out</Link> */ <Logout /> }
-          </li>
+          
        
           <li>
           {currentUser ? <Link to="/search">Search </Link> : <Link to="/signup">Sign Up</Link>}
@@ -28,7 +25,11 @@ function Navbar({ currentUser}) {
             <a target="_blank" rel="noopener noreferrer" href="https://secure24.ipayment.com/NYCPayments/nycbookmark_1.htm">Pay Your Tickets</a>
           </li>
           <li>
-        {!currentUser ? <Link to="/login">Login</Link> : <Link to="/buildings">Beta Testing</Link>}
+        {!currentUser ? <Link to="/">Beta Testing</Link> : <Link to="/buildings">Beta Testing</Link>}
+        </li>
+        <li>
+
+          {!currentUser ? <Link to="/login">Login</Link> : /*<Link to="/logout">Log Out</Link> */ <Logout />}
         </li>
         </ul>
         

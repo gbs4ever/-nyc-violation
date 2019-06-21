@@ -7,7 +7,7 @@ class ViolationContainer extends Component {
   render() {
 
 
-    const merged = [].concat.apply([], this.props.violations);
+    const merged = [].concat.apply([], this.props.something);
     return (
       <div>
         <ViolationCard violations={merged}/>
@@ -17,7 +17,7 @@ class ViolationContainer extends Component {
   }
 }
 const mapStateToProps = (state)=> {
-  return { violations: state.violations} 
+  return { something: state.violations} 
 }
 
 

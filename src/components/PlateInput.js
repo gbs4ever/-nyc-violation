@@ -60,7 +60,7 @@ class PlateInput extends Component {
      
         <fieldset className= "search">
         Please enter your information
-        <form onSubmit={this.onSubmit}>
+        <form className="boxed" onSubmit={this.onSubmit}>
           <label >Plate #  </label>
           <input
             className={errors.number ? "error" : ""}
@@ -68,7 +68,7 @@ class PlateInput extends Component {
           <label >State  </label>
           <input className={errors.state ? "error" : ""}
           onChange={this.onChange} type="text" name="state" value={this.state.state} /> <br />
-          <button disabled={isDisabled}>Search </button>
+          <button id="button center" disabled={isDisabled}>Search </button>
         </form>
         </fieldset>
         <div className = "plates">

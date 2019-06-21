@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react'
+import Violationgranchild from './Violationgranchild'
+// 
+class ViolationCard extends Component   {
+  
+// this.setState((prevState, props) => ({
+//   counter: prevState.counter }))
 
 
 
-const ViolationCard = ({violations}) => {
 
- 
-    const output = violations.map((tickets, index) => {
+
+render(){
+  
+    const output = this.props.violations.map((tickets, index) => {
 
   return  <tbody key ={index+5}>
         <tr>
-        <td key={index}> $ {tickets.fine_amount} </td>
-        <td key={index+1}>$ {tickets.payment_amount}</td>
-        <td key={index+2}> {tickets.summons_number}</td>
-      <td key={index+3}> {tickets.violation}</td>
-      <td key={index+4}> {tickets.violation_status}</td>
-      <td key={index+5}> <a target="_blank" rel="noopener noreferrer"href={tickets.summons_image.url}>View Summons</a></td>
-     
-        </tr>
+       <Violationgranchild  index={index}   tickets={tickets} /> 
+    
+        </tr >
         </tbody>
     })
   
@@ -41,7 +43,7 @@ const ViolationCard = ({violations}) => {
 
       </table>
       </div>
-  )
+  )}
           
          
   }     

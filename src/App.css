@@ -63,11 +63,11 @@
   display: block;
   color: #61dafb;
   text-align: center;
-  padding: 10px 10px;
+  padding: 9px 9px;
   text-decoration: none;
 }
 li a:hover {
-  background-color: rgb(146, 247, 146);
+  background-color: #C45231
 }
 
 .App-link {
@@ -81,6 +81,7 @@ table, td {
 th, td {
   text-align: center;
   padding: 15px;
+
    
 }
 table.center {
@@ -96,7 +97,10 @@ tbody {
   border-color: inherit;
 }
 td a:hover {
-  background-color: rgb(81, 247, 81);
+  background-color:#C45231
+}
+td a {
+   color: #56d5f8e8;
 }
 ul {
   list-style-type: none;
@@ -122,7 +126,21 @@ li {
 .col-centered{
     float: none;
     margin: 0 auto;
+   
 }
+/* #button center{
+  display: flex; 
+ justify-content: center;
+ margin-left:auto; 
+margin: 0 0 1.25rem;
+   position: relative;
+   text-decoration: none;
+   text-align: center;
+}
+.boxed{
+ text-align: right;
+  justify-content: center; 
+} */
 
 .LogoutButton {
   border: 0;
