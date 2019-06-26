@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import Navbar from './components/Navbar'
+import Navbar from './components/NavBar'
 import {getCurrentUser} from './actions/currentUser.js'
 import LoginForm from './components/LoginForm'
 import SignUp from './components/SignUp'
@@ -18,10 +18,10 @@ import Logout from './components/Logout'
 
 class App extends React.Component {
     // <ViolationContainer />
-  
+      
   componentDidMount() {
-    
-   this.props.getCurrentUser()
+   
+    this.props.getCurrentUser()
 }
   render(){
     
