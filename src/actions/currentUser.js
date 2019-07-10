@@ -32,7 +32,7 @@ export const logout = () =>{
     .then(data => {
       alert(data.notice)
     })
-//response for logged out from server 
+//response for logged out from server  test
   }
 }
 export const login = credentials => {
