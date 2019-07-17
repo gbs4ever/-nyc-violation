@@ -1,2 +1,2 @@
-/localhost:3001/*    https://nyc-violation.herokuapp.com/:splat  
-
+/localhost:3001/* https://nyc-violation.herokuapp.com/:splat  200
+/*  /index.html  200
