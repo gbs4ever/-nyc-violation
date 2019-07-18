@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux'
-// import logo from '../BridgeNYC'
+// import logo from '../BridgeNYC'  this file needs to be fixed
 class Home extends React.Component {
 //  { this.props.currentUser }
   render() {
